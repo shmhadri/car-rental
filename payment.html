@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحة الدفع</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f7fa;
+      direction: rtl;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 30px;
+    }
+
+    .info-box, form {
+      margin-bottom: 30px;
+    }
+
+    .info-box {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .payment-option {
+      flex: 1 1 calc(50% - 10px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f9f9f9;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .payment-option:hover {
+      border-color: #004aad;
+      background-color: #eef4ff;
+    }
+
+    .payment-option img {
+      width: 40px;
+      height: 40px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background: #004aad;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00327a;
+    }
+
+    @media (max-width: 500px) {
+      .payment-option {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>الدفع لتأجير السيارة</h1>
+
+    <div class="info-box">
+      <strong>نوع السيارة:</strong> هيونداي إلنترا 2023<br>
+      <strong>عدد الأيام:</strong> 3 أيام<br>
+      <strong>الإجمالي:</strong> 540 ريال سعودي
+    </div>
+
+    <form>
+      <label>الاسم الكامل</label>
+      <input type="text" placeholder="اكتب اسمك الكامل" required />
+
+      <label>البريد الإلكتروني</label>
+      <input type="email" placeholder="example@email.com" required />
+
+      <label>رقم الجوال</label>
+      <input type="tel" placeholder="05XXXXXXXX" required />
+
+      <label>طريقة الدفع</label>
+      <div class="payment-methods">
+        <div class="payment-option">
+          <img src="visa.png" alt="Visa">
+          <span>بطاقة ائتمانية</span>
+        </div>
+        <div class="payment-option">
+          <img src="applepay.png" alt="Apple Pay">
+          <span>Apple Pay</span>
+        </div>
+        <div class="payment-option">
+          <img src="stcpay.png" alt="STC Pay">
+          <span>STC Pay</span>
+        </div>
+        <div class="payment-option">
+          <img src="mada.png" alt="Mada">
+          <span>مدى</span>
+        </div>
+        <div class="payment-option">
+          <img src="bank.png" alt="Bank Transfer">
+          <span>تحويل بنكي</span>
+        </div>
+      </div>
+
+      <button type="submit">إتمام الدفع</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تأجير السيارات - الشريط العلوي</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+    }
+
+    header {
+      background: linear-gradient(45deg, #004aad, #00c6ff);
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-left: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-container span {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.8em;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* قائمة منسدلة */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      color: #333;
+      min-width: 150px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      padding: 10px;
+      text-align: right;
+      color: #333;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background-color: #004aad;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background: #0055aa;
+        color: white;
+      }
+
+      .dropdown-menu a {
+        color: white;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="ogo.png" alt="شعار الموقع" />
+      <span>تأجير السيارات</span>
+    </div>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="login.html">تسجيل الدخول</a>
+      <div class="dropdown" onclick="toggleDropdown(this)">
+        <a href="#">خدماتنا ▾</a>
+        <div class="dropdown-menu">
+          <a href="cars.html">سياراتنا</a>
+          <a href="offers.html">العروض</a>
+          <a href="insurance.html">التأمين</a>
+        </div>
+      </div>
+      <a href="contact.html">اتصل بنا</a>
+      <a href="about.html">من نحن</a>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("mainNav").classList.toggle("active");
+    }
+
+    function toggleDropdown(dropdown) {
+      if (window.innerWidth <= 768) {
+        dropdown.classList.toggle("open");
+      }
+    }
+  </script>
+</body>
+</html>

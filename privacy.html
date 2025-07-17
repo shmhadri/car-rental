@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>سياسة الخصوصية - تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #0066cc;
+      margin-top: 30px;
+    }
+
+    p {
+      line-height: 1.8;
+      margin: 15px 0;
+    }
+
+    ul {
+      margin: 15px 0 15px 20px;
+      padding-right: 20px;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #004aad;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <h1>سياسة الخصوصية</h1>
+    <p>نحن في <strong>موقع تأجير السيارات</strong> نلتزم بحماية خصوصيتك وضمان تجربة آمنة وممتعة لجميع زوارنا. يرجى قراءة البنود التالية بعناية.</p>
+    
+    <h2>١. جمع المعلومات</h2>
+    <p>قد نقوم بجمع معلوماتك الشخصية مثل الاسم، البريد الإلكتروني، رقم الهاتف، وذلك عند التسجيل أو إجراء حجز.</p>
+
+    <h2>٢. استخدام المعلومات</h2>
+    <ul>
+      <li>لتأكيد الحجوزات وتقديم خدمة أفضل.</li>
+      <li>للتواصل معك بخصوص العروض الحصرية والخدمات.</li>
+      <li>لتطوير موقعنا وتحسين تجربة المستخدم.</li>
+    </ul>
+
+    <h2>٣. حماية البيانات</h2>
+    <p>نستخدم أحدث تقنيات التشفير والحماية (HTTPS) لضمان سرية بياناتك ومنع الوصول غير المصرح به.</p>
+
+    <h2>٤. ملفات تعريف الارتباط (Cookies)</h2>
+    <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتذكر تفضيلاتك. يمكنك دائمًا التحكم في إعدادات المتصفح الخاص بك لتعطيلها.</p>
+
+    <h2>٥. مشاركة المعلومات</h2>
+    <p>لن نبيع أو نشارك معلوماتك مع أي جهة خارجية بدون موافقتك، إلا للامتثال للقانون أو حماية حقوقنا.</p>
+
+    <h2>٦. موافقتك</h2>
+    <p>باستخدامك لموقعنا، فإنك توافق على سياسة الخصوصية هذه وشروطها.</p>
+
+    <h2>٧. التعديلات</h2>
+    <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. نوصي بزيارة هذه الصفحة دوريًا للاطلاع على التغييرات.</p>
+
+    <p>للاستفسارات، يرجى <a href="contact.html">التواصل معنا</a>. نحن هنا لخدمتك ❤️</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
+
+
+
+
+
+

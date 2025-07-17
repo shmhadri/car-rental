@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #131010;
+      color: #fff;
+    }
+
+    main {
+      text-align: center;
+      padding: 20px;
+      background-color: #131010;
+    }
+
+    /* قسم الهيرو */
+    section.hero {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+    }
+    section.hero video {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+    section.hero h1 {
+      color: white;
+      font-size: 3em;
+      margin-top: 150px;
+      animation: fadeIn 2s;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    /* قسم السيارات */
+    section#cars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+    }
+    .car-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: white;
+    }
+    .car-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .car-card h3 {
+      margin: 10px;
+      color: #004aad;
+      font-size: 1.2em;
+    }
+
+    /* قسم العرض الخاص */
+    section#special-offer {
+      background: linear-gradient(135deg, #004aad, #00c6ff);
+      padding: 40px 20px;
+      margin-top: 30px;
+      border-radius: 15px;
+      animation: fadeIn 2s;
+    }
+    section#special-offer h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    section#special-offer img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.5s;
+    }
+    section#special-offer img:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    /* قسم الفيديو الأول */
+    section#promo-video {
+      background-color: #1c1c1c;
+      padding: 40px 20px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 2s;
+    }
+    section#promo-video h2 {
+      color: #00c6ff;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    section#promo-video video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      transition: transform 0.5s;
+    }
+    section#promo-video video:hover {
+      transform: scale(1.02);
+    }
+
+    /* قسم الفيديو الثاني */
+    section#extra-video {
+      background-color: #222;
+      padding: 40px 20px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      animation: fadeIn 2s;
+    }
+    section#extra-video h2 {
+      color: #00c6ff;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    section#extra-video video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      transition: transform 0.5s;
+    }
+    section#extra-video video:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <!-- قسم الهيرو -->
+    <section class="hero">
+      <video autoplay loop muted playsinline>
+        <source src="asd.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو
+      </video>
+      <h1>أهلاً بك في موقع تأجير السيارات</h1>
+    </section>
+
+    <!-- قسم السيارات -->
+    <section id="cars">
+     
+      <div class="car-card">
+        <img src="car1.jpg" alt="سيارة سيدان">
+        <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+      <div class="car-card">
+        <img src="4544.jpg" alt="سيارة رياضية">
+        <h3>سيارة رياضية أنيقة</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+      <div class="car-card">
+        <img src="777.jpg" alt="سيارة SUV">
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3><h3>سيارة دفع رباعي قوية</h3>
+      </div>
+      <div class="car-card">
+        <img src="car2.jpg" alt="سيارة بيك أب">
+        <h3>سيارة بيك أب حديثة</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+      <div class="car-card">
+        <img src="car2.jpg" alt="سيارة بيك أب">
+        <h3>سيارة بيك أب حديثة</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+      <div class="car-card">
+        <img src="hi.jpg" alt="سيارة فاخرة إضافية">
+        <h3>سيارة فاخرة إضافية</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+        <div class="car-card">
+           <img src="777.jpg" alt="سيارة SUV">
+        <h3>سيارة فاخرة إضافية</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+      <div class="car-card">
+           <img src="jjj.jpg" alt="سيارة SUV">
+        <h3>سيارة فاخرة إضافية</h3>
+          <a href="rent.html">ااحجزها الان</a><h3>سيارة سيدان فاخرة</h3>
+      </div>
+    </section>
+
+    <!-- قسم العرض الخاص -->
+    <section id="special-offer">
+      <h2>عرض خاص لعملائنا</h2>
+      <img src="تنزيل (16).jpg" alt="عرض خاص - سيارة مميزة">
+    </section>
+
+    <!-- قسم الفيديو الأول -->
+    <section id="promo-video">
+      <h2>فيديو مميز عن سياراتنا</h2>
+      <video autoplay loop muted playsinline>
+        <source src="asd.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو
+      </video>
+    </section>
+
+    <!-- قسم الفيديو الثاني -->
+    <section id="extra-video">
+      <h2>جولة إضافية في أسطولنا</h2>
+      <video autoplay loop muted playsinline>
+        <source src="mosting.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو
+      </video>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+<script>
+  async function includeHTML(id, file) {
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error('تعذر تحميل الملف');
+      const text = await res.text();
+      document.getElementById(id).innerHTML = text;
+
+      if (file.includes("header")) {
+        // تنفيذ وظائف القائمة بعد تحميل الهيدر
+        initHeaderScripts();
+      }
+
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function initHeaderScripts() {
+    document.querySelector(".nav-toggle").onclick = function () {
+      document.getElementById("mainNav").classList.toggle("active");
+    };
+
+    const dropdowns = document.querySelectorAll(".dropdown > a");
+    dropdowns.forEach(drop => {
+      drop.onclick = function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = this.parentElement;
+          document.querySelectorAll(".dropdown").forEach(d => {
+            if (d !== parent) d.classList.remove("open");
+          });
+          parent.classList.toggle("open");
+        }
+      };
+    });
+  }
+
+  // تحميل الهيدر والفوتر
+  includeHTML("header", "header.html");
+  includeHTML("footer", "footer.html");
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>حجز السيارة</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      direction: rtl;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #00347a;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <h2>نموذج حجز السيارة</h2>
+    <form>
+      <label for="car">نوع السيارة</label>
+      <select id="car" name="car">
+        <option>سيارة سيدان</option>
+        <option>سيارة رياضية</option>
+        <option>دفع رباعي</option>
+        <option>بيك أب</option>
+      </select>
+
+      <label for="city">المدينة</label>
+      <input type="text" id="city" name="city" placeholder="مثال: الرياض">
+
+      <label for="pickup">تاريخ ووقت الاستلام</label>
+      <input type="datetime-local" id="pickup" name="pickup">
+
+      <label for="return">تاريخ ووقت الإرجاع</label>
+      <input type="datetime-local" id="return" name="return">
+
+      <label for="days">عدد الأيام</label>
+      <input type="number" id="days" name="days" min="1" max="30">
+
+      <label for="price">المبلغ الإجمالي (ريال)</label>
+      <input type="number" id="price" name="price" readonly placeholder="يُحسب تلقائيًا">
+
+    
+<a href="payment.html" class="btn-link">تأكيد الحجز</a>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error("تعذر تحميل الملف");
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+
+    // حساب المبلغ تلقائي
+    const daysInput = document.getElementById("days");
+    const priceInput = document.getElementById("price");
+    const carSelect = document.getElementById("car");
+
+    const carRates = {
+      "سيارة سيدان": 200,
+      "سيارة رياضية": 350,
+      "دفع رباعي": 300,
+      "بيك أب": 250
+    };
+
+    function updatePrice() {
+      const days = parseInt(daysInput.value) || 0;
+      const car = carSelect.value;
+      const rate = carRates[car] || 0;
+      priceInput.value = days * rate;
+    }
+
+    daysInput.addEventListener("input", updatePrice);
+    carSelect.addEventListener("change", updatePrice);
+  </script>
+</body>
+</html>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
+

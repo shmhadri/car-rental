@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>من نحن - تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #131010;
+      color: #fff;
+    }
+    main {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      animation: fadeIn 1.5s;
+    }
+    h1 {
+      color: #00c6ff;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
+    p {
+      line-height: 1.8;
+      font-size: 1.2em;
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <h1>من نحن</h1>
+    <p>
+      نحن شركة رائدة في مجال تأجير السيارات، نقدم أفضل وأحدث السيارات لتلبية احتياجات عملائنا الكرام. 
+      نسعى لتوفير تجربة مريحة وآمنة وبأسعار منافسة. فريقنا ملتزم بالجودة وخدمة العملاء بأعلى مستوى من الاحترافية.
+    </p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>

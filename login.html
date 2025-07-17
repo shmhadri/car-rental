@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تسجيل الدخول - تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      animation: fadeIn 1s;
+    }
+
+    .image-side {
+      flex: 1 1 300px;
+      background: url('car6.jpg') center/cover no-repeat;
+      min-height: 300px;
+    }
+
+    .form-side {
+      flex: 1 1 300px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #fff;
+    }
+
+    .form-side h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00c6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s;
+    }
+    input:focus {
+      border-color: #004aad;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background: linear-gradient(45deg, #004aad, #00c6ff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #003080, #0080cc);
+    }
+
+    .google-login {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .google-login button {
+      background: #db4437;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .google-login button span {
+      margin-right: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      main {
+        flex-direction: column;
+      }
+      .image-side {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <div class="image-side"></div>
+
+    <div class="form-side">
+      <h2>تسجيل الدخول</h2>
+      <form>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" placeholder="كلمة المرور" required>
+        <button type="submit">تسجيل الدخول</button>
+      </form>
+      <div class="google-login">
+        <button type="button">
+          <span>🔒</span> تسجيل الدخول باستخدام Google
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>

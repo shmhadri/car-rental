@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>سياراتنا - تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(45deg, #004aad, #00c6ff);
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1s;
+    }
+
+    main h2 {
+      color: #004aad;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2em;
+      border-bottom: 2px solid #00c6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .car-card {
+      background: linear-gradient(135deg, #ffffff, #f1f1f1);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .car-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #00c6ff;
+    }
+    .car-card h3 {
+      margin: 15px;
+      font-size: 1.3em;
+      color: #004aad;
+    }
+    .car-card p {
+      margin: 0 15px 15px;
+      color: #555;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>تأجير السيارات</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="cars.html">سياراتنا</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>سياراتنا</h2>
+    <div class="cars-grid">
+      <div class="car-card">
+        <img src="car1.jpg" alt="سيارة سيدان فاخرة">
+        <h3>سيارة سيدان فاخرة</h3>
+        <p>استمتع بالرحلة براحة وأناقة مثالية في كل مشوار.</p>
+      </div>
+
+      <div class="car-card">
+        <img src="4544.jpg" alt="سيارة رياضية أنيقة">
+        <h3>سيارة رياضية أنيقة</h3>
+        <p>قوة وأناقة لتجربة قيادة لا تُنسى، حرية مطلقة على الطريق.</p>
+      </div>
+
+      <div class="car-card">
+        <img src="777.jpg" alt="سيارة SUV قوية">
+        <h3>سيارة SUV قوية</h3>
+        <p>قوة دفع رباعي تلبي كل مغامرة بثقة وثبات.</p>
+      </div>
+
+      <div class="car-card">
+        <img src="car2.jpg" alt="سيارة بيك أب حديثة">
+        <h3>سيارة بيك أب حديثة</h3>
+        <p>جاهزة لنقل أحمالك بأمان، متعة وأداء مميز في كل الظروف.</p>
+      </div>
+
+      <div class="car-card">
+        <img src="car6.jpg" alt="سيارة فاخرة إضافية">
+        <h3>سيارة فاخرة إضافية</h3>
+        <p>تصميم أنيق وراحة استثنائية لمستوى جديد من الفخامة.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    جميع الحقوق محفوظة &copy; 2025 تأجير السيارات
+  </footer>
+</body>
+</html>

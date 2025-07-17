@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>اتصل بنا - تأجير السيارات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(45deg, #004aad, #00c6ff);
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s;
+    }
+
+    main h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      font-size: 2em;
+      border-bottom: 2px solid #00c6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      line-height: 2;
+      font-size: 1.1em;
+    }
+    .contact-info p {
+      margin: 10px 0;
+    }
+    .contact-info span.icon {
+      margin-left: 8px;
+      color: #00c6ff;
+      font-size: 1.2em;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      padding: 15px;
+      background-color: #004aad;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>تأجير السيارات</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>اتصل بنا</h2>
+    <div class="contact-info">
+      <p><span class="icon">📞</span> هاتف: 0555 123 456</p>
+      <p><span class="icon">📱</span> واتساب: 0555 654 321</p>
+      <p><span class="icon">📧</span> بريد إلكتروني: rental.cars@example.com</p>
+      <p><span class="icon">📍</span> العنوان: الرياض، المملكة العربية السعودية</p>
+    </div>
+  </main>
+
+  <footer>
+    جميع الحقوق محفوظة &copy; 2025 تأجير السيارات
+  </footer>
+</body>
+</html>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('تعذر تحميل الملف');
+        const text = await res.text();
+        document.getElementById(id).innerHTML = text;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
