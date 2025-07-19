@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تأكيد الدفع</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      direction: rtl;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 80px auto 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00b894;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .success-icon {
+      font-size: 4em;
+      color: #00b894;
+      margin-bottom: 20px;
+    }
+
+    a.btn-home {
+      display: inline-block;
+      background-color: #004aad;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    a.btn-home:hover {
+      background-color: #003580;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <div class="success-icon">✅</div>
+    <h1>تمت عملية الدفع بنجاح</h1>
+    <p>شكرًا لاستخدامك منصتنا. تم تأكيد الحجز وسيتم التواصل معك قريبًا لتأكيد التفاصيل.</p>
+    <a href="index.html" class="btn-home">العودة إلى الصفحة الرئيسية</a>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function includeHTML(id, file) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error("فشل تحميل " + file);
+        const html = await res.text();
+        document.getElementById(id).innerHTML = html;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    includeHTML("header", "header.html");
+    includeHTML("footer", "footer.html");
+  </script>
+</body>
+</html>
